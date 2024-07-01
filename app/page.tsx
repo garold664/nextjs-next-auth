@@ -1,3 +1,4 @@
+import LoginButton from '@/components/ui/auth/LoginButton';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Poppins } from 'next/font/google';
@@ -15,10 +16,12 @@ export default function Home() {
         <h1 className={cn('text-6xl font-semibold text-white drop-shadow-md')}>
           🔒Auth
         </h1>
-        <p className="text-white text-lg ">Authentication service</p>
-        <Button variant={'secondary'} size={'xl'}>
-          Sign in
-        </Button>
+        <p className="text-white text-lg">Authentication service</p>
+        <LoginButton>
+          <Button variant={'secondary'} size={'xl'}>
+            Sign in
+          </Button>
+        </LoginButton>
       </div>
     </main>
   );
