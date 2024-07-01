@@ -15,6 +15,7 @@ import {
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import FormError from '../FormError';
+import FormSuccess from '../FormSuccess';
 
 export default function LoginForm() {
   const form = useForm<z.infer<typeof LoginSchema>>({
@@ -69,6 +70,7 @@ export default function LoginForm() {
             />
           </div>
           <FormError message="Something went wrong" />
+          <FormSuccess message="Success!" />
           <Button type="submit" className="w-full">
             Login
           </Button>
