@@ -16,8 +16,8 @@ import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import FormError from '../FormError';
 import FormSuccess from '../FormSuccess';
-import { login } from '@/actions/login';
 import { useState, useTransition } from 'react';
+import { register } from '@/actions/register';
 
 export default function RegisterForm() {
   const [error, setError] = useState('');
@@ -34,7 +34,7 @@ export default function RegisterForm() {
 
   const onSubmit = (values: z.infer<typeof RegisterSchema>) => {
     startTransition(() => {
-      login(values).then(({ error, success }) => {
+      register(values).then(({ error, success }) => {
         console.log(error, success);
         setError(error);
         setSuccess(success);
