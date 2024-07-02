@@ -1,5 +1,6 @@
 import LoginButton from '@/components/auth/LoginButton';
 import { Button } from '@/components/ui/button';
+import { db } from '@/lib/db';
 import { cn } from '@/lib/utils';
 import { Poppins } from 'next/font/google';
 import Image from 'next/image';
