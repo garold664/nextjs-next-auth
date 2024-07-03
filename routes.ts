@@ -11,7 +11,7 @@ export const publicRoutes = ['/'];
  * These routes will redirect to the settings page
  * @type {string[]}
  */
-export const authRoutes = ['/auth/login', '/auth/signup'];
+export const authRoutes = ['/auth/login', '/auth/signup', '/auth/error'];
 
 /**
  * The prefix of routes that used for API authentication
