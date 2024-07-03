@@ -12,6 +12,7 @@ export default {
         if (validatedFields.success) {
           const { email, password } = validatedFields.data;
           const user = await getUserByEmail(email);
+          console.log('userByEmail: ', user);
           // there can be users without password, because they logged in via Google, GitHub.
           if (!user || !user.password) return null;
 

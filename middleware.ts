@@ -15,6 +15,7 @@ export const { auth } = NextAuth(authConfig);
 // })
 
 export default auth((req) => {
+  //TODO fix this TYPESCRIPT ERROR WITH AUTH((REQ) => {}) FUNCTION
   // export default auth(async function middleware(req) {
   const { nextUrl } = req;
   const isLoggedIn = !!req.auth;

@@ -22,13 +22,10 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
       password,
       redirectTo: DEFAULT_LOGIN_REDIRECT,
     });
-    return {
-      error: '',
-      success: 'You successfully logged in',
-    };
   } catch (error) {
     if (error instanceof AuthError) {
-      console.log(error.type);
+      // console.log('ERROR TYPE: ', error.type);
+      //TODO fix this: now it is throwing error of CallbackRouteError instead of CredentialsSignin !!!
       switch (error.type) {
         case 'CredentialsSignin':
           return {
@@ -36,7 +33,7 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
             success: '',
           };
         default:
-          console.log(error);
+          // console.log(error);
           return {
             error: 'Something went wrong',
             success: '',
