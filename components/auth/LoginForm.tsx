@@ -33,11 +33,16 @@ export default function LoginForm() {
 
   const onSubmit = (values: z.infer<typeof LoginSchema>) => {
     startTransition(() => {
-      login(values).then(({ error, success }) => {
-        console.log(error, success);
-        setError(error);
-        setSuccess(success);
-      });
+      login(values)
+        .then((status: { error: string; success: string } | undefined) => {
+          if (!status) return;
+          const { error, success } = status;
+          setError(error);
+          setSuccess(success);
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
     });
   };
   return (

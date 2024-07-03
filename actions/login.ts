@@ -28,6 +28,7 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
     };
   } catch (error) {
     if (error instanceof AuthError) {
+      console.log(error.type);
       switch (error.type) {
         case 'CredentialsSignin':
           return {
@@ -44,8 +45,4 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
     }
     throw error;
   }
-  return {
-    error: '',
-    success: 'Email successfully sent',
-  };
 };
