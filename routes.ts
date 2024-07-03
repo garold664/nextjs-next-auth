@@ -14,7 +14,7 @@ export const publicRoutes = ['/'];
 export const authRoutes = ['/auth/login', '/auth/signup'];
 
 /**
- * The prefix of routes that used for authentication
+ * The prefix of routes that used for API authentication
  * Routes that start with this prefix are used for authentication purposes
  * @type {string}
  */
