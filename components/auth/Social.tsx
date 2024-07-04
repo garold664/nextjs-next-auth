@@ -30,6 +30,14 @@ export default function Social() {
       >
         <FaGithub />
       </Button>
+      <Button
+        onClick={() => signIn()}
+        size={'lg'}
+        className="w-full"
+        variant={'outline'}
+      >
+        Sign in page
+      </Button>
     </div>
   );
 }
