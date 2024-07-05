@@ -30,11 +30,16 @@ export const {
     },
   },
   callbacks: {
-    async signIn({ user }) {
-      // if (!user.id) return false;
-      // const existingUser = await getUserById(user.id);
+    async signIn({ user, account }) {
+      // console.log('account: ', account);
 
-      // if (!existingUser || !existingUser.emailVerified) return false;
+      if (account?.provider !== 'credentials') return true;
+      if (!user.id) return false;
+      const existingUser = await getUserById(user.id);
+
+      if (!existingUser || !existingUser.emailVerified) return false;
+
+      //TODO: add 2FA check
 
       return true;
     },

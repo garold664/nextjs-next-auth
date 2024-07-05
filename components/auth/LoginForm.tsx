@@ -26,7 +26,7 @@ export default function LoginForm() {
     searchParams.get('error') === 'OAuthAccountNotLinked'
       ? 'Email already in use with different account'
       : '';
-  console.log(urlError);
+  // console.log(urlError);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [isPending, startTransition] = useTransition();
